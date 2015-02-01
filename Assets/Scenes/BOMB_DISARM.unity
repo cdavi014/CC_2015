@@ -1861,7 +1861,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .639215708, g: .733333349, b: .768627465, a: .0196078438}
+  m_BackGroundColor: {r: .823529422, g: .978093326, b: 1, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1872,7 +1872,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 10.0522499
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1957,7 +1957,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -4965,7 +4965,7 @@ Transform:
   m_LocalScale: {x: 24.188652, y: 3.63493037, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 87
+  m_RootOrder: 83
 --- !u!60 &319729348
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11086,7 +11086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1454633847}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &691769334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11867,6 +11867,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2016710, guid: 86e857c4678a2460cb428cf793992ace, type: 2}
+      propertyPath: orthographic size
+      value: 10.0522499
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86e857c4678a2460cb428cf793992ace, type: 2}
   m_RootGameObject: {fileID: 1454633846}
@@ -11972,7 +11976,7 @@ Transform:
   m_LocalScale: {x: 35.0545158, y: 39.9736252, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 82
+  m_RootOrder: 76
 --- !u!1 &737437183
 GameObject:
   m_ObjectHideFlags: 0
@@ -13626,7 +13630,7 @@ Transform:
   - {fileID: 574453784}
   - {fileID: 385309941}
   m_Father: {fileID: 0}
-  m_RootOrder: 81
+  m_RootOrder: 82
 --- !u!1 &848871723
 GameObject:
   m_ObjectHideFlags: 0
@@ -14469,7 +14473,7 @@ Transform:
   - {fileID: 636979351}
   - {fileID: 335428993}
   m_Father: {fileID: 0}
-  m_RootOrder: 83
+  m_RootOrder: 84
 --- !u!61 &898894217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15038,7 +15042,7 @@ Transform:
   m_LocalScale: {x: 9.46083069, y: 2.32485271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 92
+  m_RootOrder: 90
 --- !u!60 &925473260
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17693,7 +17697,7 @@ Transform:
   - {fileID: 1944238873}
   - {fileID: 671522645}
   m_Father: {fileID: 0}
-  m_RootOrder: 79
+  m_RootOrder: 80
 --- !u!114 &1134299659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18334,7 +18338,7 @@ Transform:
   - {fileID: 1728926724}
   - {fileID: 664253431}
   m_Father: {fileID: 0}
-  m_RootOrder: 77
+  m_RootOrder: 78
 --- !u!61 &1151805727
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20421,7 +20425,7 @@ Transform:
   - {fileID: 1210899525}
   - {fileID: 893315998}
   m_Father: {fileID: 0}
-  m_RootOrder: 76
+  m_RootOrder: 77
 --- !u!1 &1319625011
 GameObject:
   m_ObjectHideFlags: 0
@@ -21390,7 +21394,7 @@ Transform:
   - {fileID: 623949143}
   - {fileID: 1181022882}
   m_Father: {fileID: 0}
-  m_RootOrder: 86
+  m_RootOrder: 87
 --- !u!1 &1371417246
 GameObject:
   m_ObjectHideFlags: 0
@@ -22196,7 +22200,7 @@ Transform:
   - {fileID: 204952943}
   - {fileID: 298175404}
   m_Father: {fileID: 0}
-  m_RootOrder: 90
+  m_RootOrder: 91
 --- !u!114 &1412669257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22737,8 +22741,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 119853915}
-  - {fileID: 691769333}
   - {fileID: 1629061729}
+  - {fileID: 691769333}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!114 &1454633848
@@ -22838,7 +22842,7 @@ Transform:
   - {fileID: 341316550}
   - {fileID: 2132745794}
   m_Father: {fileID: 0}
-  m_RootOrder: 91
+  m_RootOrder: 92
 --- !u!61 &1455554890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25677,7 +25681,7 @@ RectTransform:
   - {fileID: 1422448827}
   - {fileID: 904074164}
   m_Father: {fileID: 1454633847}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -27723,7 +27727,7 @@ Transform:
   - {fileID: 1340055790}
   - {fileID: 426300988}
   m_Father: {fileID: 0}
-  m_RootOrder: 84
+  m_RootOrder: 85
 --- !u!61 &1725165241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28647,7 +28651,7 @@ Transform:
   - {fileID: 584400348}
   - {fileID: 1481110243}
   m_Father: {fileID: 0}
-  m_RootOrder: 78
+  m_RootOrder: 79
 --- !u!1 &1770537853
 GameObject:
   m_ObjectHideFlags: 0
@@ -29633,7 +29637,7 @@ Transform:
   - {fileID: 1602491067}
   - {fileID: 1534976119}
   m_Father: {fileID: 0}
-  m_RootOrder: 80
+  m_RootOrder: 81
 --- !u!114 &1813129922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33993,7 +33997,7 @@ Transform:
   - {fileID: 1296906823}
   - {fileID: 873644815}
   m_Father: {fileID: 0}
-  m_RootOrder: 85
+  m_RootOrder: 86
 --- !u!1 &2078784483
 GameObject:
   m_ObjectHideFlags: 0
@@ -34234,8 +34238,6 @@ MonoBehaviour:
   maxSpeed: 9
   jumpForce: 3177
   explosion: {fileID: 173354, guid: 364d3ab102884482d98a60f44d8e7601, type: 2}
-  jumpClip: {fileID: 8300000, guid: 2aa967c862f35443fa24c156818ec9df, type: 3}
-  explosionClip: {fileID: 8300000, guid: fb6b05973ad4b4de49dadaf064de2ebc, type: 3}
 --- !u!114 &2086931166
 MonoBehaviour:
   m_ObjectHideFlags: 0
