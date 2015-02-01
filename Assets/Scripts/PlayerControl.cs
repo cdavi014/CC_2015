@@ -36,6 +36,12 @@ public class PlayerControl : MonoBehaviour
 		DontDestroyOnLoad(GameObject.Find("CheckPointManager"));
 	}
 
+	void Start()
+	{
+		GameManager manager = (GameManager) GameObject.FindGameObjectWithTag("GameManager").GetComponent ("GameManager");
+		transform.position = manager.getCheckPointPosition();
+	}
+
 
 	void Update()
 	{
@@ -101,9 +107,6 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
-
-	
-	
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.

@@ -14,21 +14,6 @@ public enum CurrentLevel {
 	END
 }
 
-
-/*[System.Serializable]
-public class LevelBGM {
-	public AudioClip START;
-	public AudioClip GRAVITY;
-	public AudioClip HAMMER;
-	public AudioClip BOMB_DISARM;
-	public AudioClip CUTSCENE_0;
-	public AudioClip CUTSCENE_1;
-	public AudioClip CUTSCENE_2;
-	public AudioClip FINAL;
-}*/
-
-
-
 public class GameManager : MonoBehaviour {
 	private static GameManager instance = null;
 	public static GameManager Instance {
@@ -37,6 +22,9 @@ public class GameManager : MonoBehaviour {
 
 	public Image blackScreen;
 	public float blackoutTime = 1.0f;
+	//170x, 20y
+	private Vector3 checkPointLocation = Vector3.zero;
+	GameObject player = null;
 
 	public AudioManager audio;
 	//public LevelBGM levelBGM;
@@ -60,27 +48,31 @@ public class GameManager : MonoBehaviour {
 		} else {
 			instance = this;
 			GameObject.DontDestroyOnLoad (this.gameObject);
-
-			/*this.levelBGMDict ["START"] = this.levelBGM.START;
-			this.levelBGMDict ["GRAVITY"] = this.levelBGM.GRAVITY;
-			this.levelBGMDict ["BOMB_DISARM"] = this.levelBGM.BOMB_DISARM;
-			this.levelBGMDict ["CUTSCENE_0"] = this.levelBGM.CUTSCENE_0;
-			this.levelBGMDict ["CUTSCENE_1"] = this.levelBGM.CUTSCENE_1;
-			this.levelBGMDict ["CUTSCENE_2"] = this.levelBGM.CUTSCENE_2;
-			this.levelBGMDict ["FINAL"] = this.levelBGM.FINAL;*/
 		}
 	}
 
+	void Start()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+
+		if(checkPointLocation == Vector3.zero) checkPointLocation = player.transform.position;
+	}
+
+	public void setCheckPoint(Vector3 position)
+	{
+		checkPointLocation = position;
+		Debug.Log("Set new checkpoint to: " + position.ToString());
+	}
+
+	public Vector3 getCheckPointPosition()
+	{
+		return checkPointLocation;
+	}
 
 	public void GoToNextLevel (){
 		if (instance.level < this.levelList.Length - 1) {
 			instance.level++;
 			string newLevel = instance.levelList [instance.level].ToString ();
-
-			/*if (this.levelBGMDict.ContainsKey (newLevel)) {
-				if (this.levelBGMDict[newLevel] != null)
-					this.audio.PlayBackgroundMusic (this.levelBGMDict [newLevel], true);
-			}*/
 
 			StartCoroutine (instance.GoToNextLevelRoutine (newLevel));
 		}
@@ -107,7 +99,7 @@ public class GameManager : MonoBehaviour {
 		float timer = 0.0f;
 		float spinTime = 1.0f;
 
-		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		//GameObject player = GameObject.FindGameObjectWithTag ("Player");
 
 		if (player.GetComponent <PlayerControl> () != null)
 			player.GetComponent <PlayerControl> ().enabled = false;

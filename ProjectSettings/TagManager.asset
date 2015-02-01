@@ -15,6 +15,7 @@ TagManager:
   - CooldownIndicator
   - Lever
   - LevelTrigger
+  - GameManager
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

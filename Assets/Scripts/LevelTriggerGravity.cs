@@ -6,12 +6,13 @@ public class LevelTriggerGravity : MonoBehaviour {
 	Vector2 onEnter = Vector2.zero;
 	Vector2 onExit = Vector2.zero;
 	bool enteredLevel2 = false;
+	GameObject gameManager = null;
 
-	
 	// Use this for initialization
 	void Start () 
 	{
-		
+		gameManager = GameObject.FindGameObjectWithTag("GameManager");
+		Debug.Log ("GameManager is" + gameManager.ToString());
 	}
 	
 	// Update is called once per frame
@@ -48,9 +49,14 @@ public class LevelTriggerGravity : MonoBehaviour {
 			if(sameDirection && !transform.name.Equals("Level4Trigger") )
 			{
 				//find out if up or down level, we would have to call player control floorSettings()
+				GameManager manager = (GameManager) gameManager.GetComponent("GameManager");
+				Debug.Log ("Manager is: " + manager.ToString());
 
 				if(transform.name.Equals("Level2Trigger"))
 				{
+					manager.setCheckPoint(player.transform.position);
+
+					Debug.Log("Set checkpoint for level 2");
 					if(onExit.y < 0.0)
 						player.floorSettings(1);
 					else 
